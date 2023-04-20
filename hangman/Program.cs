@@ -24,7 +24,7 @@
             //Prompting "______" instead of mystery word
             Console.WriteLine($"Mystery word: {string.Join("", mysteryWord.Select(c => "_"))}");
 
-            while (correctLettersGuessed < mysteryWord.Length && guessCount <= guessLimit)
+            while (guessCount <= guessLimit)
             {
                 Console.WriteLine("Guess a letter: ");
                 char playerGuess = char.Parse(Console.ReadLine());
@@ -48,6 +48,12 @@
                         Console.WriteLine("Correct guess!");
                     }
                 }
+                if (correctLettersGuessed == mysteryWord.Length) 
+                {
+                    //Prompting when you guess the word
+                    Console.WriteLine("Congratulations, you guessed the word!");
+                    break;
+                }
                 if (correctGuess == false)
                 {
                     //Prompting how many guesses are left after a wrong guess
@@ -66,8 +72,6 @@
                //Prompting each letter guessed in the mystery word
                Console.WriteLine($"Mystery word: {string.Join("", guess.Select(c => Char.ToUpper(c)))}");   
             }
-            //Prompting when you guess the word
-            Console.WriteLine("Congratulations, you guessed the word!");
         }
     }
 }
