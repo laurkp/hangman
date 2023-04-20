@@ -18,13 +18,13 @@
             string mysteryWord = list[index];
             int guessCount = 1;
             int guessLimit = 10;
-            int lettersGuessed = 0;
+            int correctLettersGuessed = 0;
             char[] guess = mysteryWord.Select(c => '_').ToArray();
 
             //Prompting "______" instead of mystery word
             Console.WriteLine($"Mystery word: {string.Join("", mysteryWord.Select(c => "_"))}");
 
-            while (lettersGuessed < mysteryWord.Length && guessCount <= guessLimit)
+            while (correctLettersGuessed < mysteryWord.Length && guessCount <= guessLimit)
             {
                 Console.WriteLine("Guess a letter: ");
                 char playerGuess = char.Parse(Console.ReadLine());
@@ -44,7 +44,7 @@
                     {
                         guess[l] = playerGuess;
                         correctGuess = true;
-                        lettersGuessed++;
+                        correctLettersGuessed++;
                     }
                 }
                 //Prompting if he guessed a letter
