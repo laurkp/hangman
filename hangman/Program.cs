@@ -2,6 +2,7 @@
 {
     internal class Program
     {
+        const int GUESSLIMIT = 10;
         static void Main(string[] args)
         {
             //Prompting the start of the game
@@ -17,14 +18,13 @@
             int index = random.Next(list.Count);
             string mysteryWord = list[index];
             int guessCount = 1;
-            int guessLimit = 10;
             int correctLettersGuessed = 0;
             char[] guess = mysteryWord.Select(c => '_').ToArray();
 
             //Prompting "______" instead of mystery word
             Console.WriteLine($"Mystery word: {string.Join("", mysteryWord.Select(c => "_"))}");
 
-            while (guessCount <= guessLimit)
+            while (guessCount <= GUESSLIMIT)
             {
                 Console.WriteLine("Guess a letter: ");
                 char playerGuess = char.Parse(Console.ReadLine());
@@ -38,7 +38,7 @@
                 }
                 //Check if the player guessed a letter
                 bool correctGuess = false;
-                  for (int l = 0; l < mysteryWord.Length; l++)
+                for (int l = 0; l < mysteryWord.Length; l++)
                 {
                     if (playerGuess == mysteryWord[l])
                     {
@@ -70,7 +70,7 @@
                     guessCount++;
                 }
                //Prompting each letter guessed in the mystery word
-               Console.WriteLine($"Mystery word: {string.Join("", guess.Select(c => Char.ToUpper(c)))}");   
+               Console.WriteLine($"Mystery word: {string.Join("", guess.Select(c => Char.ToUpper(c)))}");
             }
         }
     }
