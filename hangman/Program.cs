@@ -38,24 +38,20 @@
                 }
                 //Check if the player guessed a letter
                 bool correctGuess = false;
-                for (int l = 0; l < mysteryWord.Length; l++)
+                  for (int l = 0; l < mysteryWord.Length; l++)
                 {
                     if (playerGuess == mysteryWord[l])
                     {
                         guess[l] = playerGuess;
                         correctGuess = true;
                         correctLettersGuessed++;
+                        Console.WriteLine("Correct guess!");
                     }
                 }
-                //Prompting if he guessed a letter
-                if (correctGuess)
+                if (correctGuess == false)
                 {
-                    Console.WriteLine("Correct guess!");
-                }
-                //Prompting how many guesses are left after a wrong guess
-                else
-                {
-                    int guessLeft = guessLimit - guessCount;
+                    //Prompting how many guesses are left after a wrong guess
+                    int guessLeft = GUESSLIMIT - guessCount;
                     Console.WriteLine($"Wrong guess. You have {guessLeft} guesses remaining.");
 
                     //Prompting when you lose and the mystery word
@@ -68,8 +64,7 @@
                     guessCount++;
                 }
                //Prompting each letter guessed in the mystery word
-               Console.WriteLine($"Mystery word: {string.Join("", guess.Select(c => Char.ToUpper(c)))}");
-                
+               Console.WriteLine($"Mystery word: {string.Join("", guess.Select(c => Char.ToUpper(c)))}");   
             }
             //Prompting when you guess the word
             Console.WriteLine("Congratulations, you guessed the word!");
