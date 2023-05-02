@@ -27,7 +27,16 @@
             while (guessCount <= GUESSLIMIT)
             {
                 Console.WriteLine("Guess a letter: ");
-                char playerGuess = char.Parse(Console.ReadLine());
+                char playerGuess;
+                try
+                {
+                    playerGuess = char.Parse(Console.ReadLine());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"{e.Message}");
+                    return;
+                }
                 Console.Clear();
 
                 // Check if the player has already guessed the letter
