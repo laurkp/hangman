@@ -22,8 +22,13 @@
             char[] guess = mysteryWord.Select(c => '_').ToArray();
 
             //Prompting "______" instead of mystery word
-            Console.WriteLine($"Mystery word: {string.Join("", mysteryWord.Select(c => "_"))}");
-
+            Console.Write("Mystery word: ");
+            for (int i = 0; i < mysteryWord.Length; i++) 
+            {
+                Console.Write("_");
+            }
+            Console.WriteLine();
+            
             while (guessCount <= GUESSLIMIT)
             {
                 Console.WriteLine("Guess a letter: ");
@@ -79,7 +84,13 @@
                     guessCount++;
                 }
                //Prompting each letter guessed in the mystery word
-               Console.WriteLine($"Mystery word: {string.Join("", guess.Select(c => Char.ToUpper(c)))}");
+                Console.Write("Mystery word: ");
+                for (int i = 0; i < guess.Length; i++)
+                {
+                    Console.Write(Char.ToUpper(guess[i]));
+                }
+                Console.WriteLine();
+
             }
         }
     }
