@@ -33,14 +33,10 @@
             {
                 Console.WriteLine("Guess a letter: ");
                 char playerGuess;
-                try
+                if (!char.TryParse(Console.ReadLine(), out playerGuess))
                 {
-                    playerGuess = char.Parse(Console.ReadLine());
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine($"{e.Message}");
-                    return;
+                    Console.WriteLine("Invalid input. Please enter a single character.");
+                    continue;
                 }
                 Console.Clear();
 
