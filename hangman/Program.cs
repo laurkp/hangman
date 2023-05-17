@@ -21,16 +21,15 @@
             int correctLettersGuessed = 0;
             char[] guess = mysteryWord.Select(c => '_').ToArray();
 
-            //Prompting "______" instead of mystery word
-            Console.Write("Mystery word: ");
-            for (int i = 0; i < mysteryWord.Length; i++) 
-            {
-                Console.Write("_");
-            }
-            Console.WriteLine();
-            
             while (guessCount <= GUESSLIMIT)
             {
+                //Prompting "______" instead of mystery word and each letter guessed 
+                Console.Write("Mystery word: ");
+                for (int i = 0; i < guess.Length; i++)
+                {
+                    Console.Write(Char.ToUpper(guess[i]));
+                }
+                Console.WriteLine();
                 Console.WriteLine("Guess a letter: ");
                 char playerGuess;
                 if (!char.TryParse(Console.ReadLine(), out playerGuess))
@@ -79,14 +78,6 @@
                     }
                     guessCount++;
                 }
-               //Prompting each letter guessed in the mystery word
-                Console.Write("Mystery word: ");
-                for (int i = 0; i < guess.Length; i++)
-                {
-                    Console.Write(Char.ToUpper(guess[i]));
-                }
-                Console.WriteLine();
-
             }
         }
     }
