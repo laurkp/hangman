@@ -34,8 +34,7 @@
                 {
                     Console.Write(Char.ToUpper(guess[i]));
                 }
-                Console.WriteLine();
-                Console.WriteLine("Guess a letter: ");
+                Console.WriteLine("\nGuess a letter: ");
                 char playerGuess;
                 if (!char.TryParse(Console.ReadLine(), out playerGuess))
                 {
