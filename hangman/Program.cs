@@ -19,7 +19,12 @@
             string mysteryWord = list[index];
             int guessCount = 1;
             int correctLettersGuessed = 0;
-            char[] guess = mysteryWord.Select(c => '_').ToArray();
+            char[] guess = new char [mysteryWord.Length];
+            for (int c = 0; c < mysteryWord.Length; c++)
+            {
+                guess[c] = '_';
+            }
+           
 
             while (guessCount <= GUESSLIMIT)
             {
