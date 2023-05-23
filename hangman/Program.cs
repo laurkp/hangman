@@ -19,10 +19,10 @@
             string mysteryWord = list[index];
             int guessCount = 1;
             int correctLettersGuessed = 0;
-            char[] guess = new char [mysteryWord.Length];
+            char[] guessed = new char [mysteryWord.Length];
             for (int c = 0; c < mysteryWord.Length; c++)
             {
-                guess[c] = '_';
+                guessed[c] = '_';
             }
            
 
@@ -30,9 +30,9 @@
             {
                 //Prompting "______" instead of mystery word and each letter guessed 
                 Console.Write("Mystery word: ");
-                for (int i = 0; i < guess.Length; i++)
+                for (int i = 0; i < guessed.Length; i++)
                 {
-                    Console.Write(Char.ToUpper(guess[i]));
+                    Console.Write(Char.ToUpper(guessed[i]));
                 }
                 Console.WriteLine("\nGuess a letter: ");
                 char playerGuess;
@@ -55,7 +55,7 @@
                 {
                     if (playerGuess == mysteryWord[l])
                     {
-                        guess[l] = playerGuess;
+                        guessed[l] = playerGuess;
                         correctGuess = true;
                         correctLettersGuessed++;
                         Console.WriteLine("Correct guess!");
