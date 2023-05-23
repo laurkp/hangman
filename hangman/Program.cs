@@ -9,10 +9,10 @@
             Console.WriteLine("Let's play Hangman Game!!!");
 
             //Declaring a random variable
-            var random = new Random();
+            Random random = new Random();
 
             //Declaring a list of words
-            var list = new List<string>() { "abruptly", "frizzled", "glyph", "icebox", "buffon", "bikini", "clown", "exodus", "vortex" };
+            List<string> list = new List<string>() { "abruptly", "frizzled", "glyph", "icebox", "buffon", "bikini", "clown", "exodus", "vortex" };
 
             //Declaring a variable that takes a random word from the list
             int index = random.Next(list.Count);
