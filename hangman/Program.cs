@@ -74,7 +74,7 @@
                     Console.WriteLine($"Wrong guess. You have {guessLeft} guesses remaining.");
 
                     //Prompting when you lose and the mystery word
-                    if (guessLeft == 0)
+                    if (guessLeft <= 0)
                     {
                         Console.WriteLine("You lose!");
                         Console.WriteLine($"The word was: {mysteryWord.ToUpper()}");
