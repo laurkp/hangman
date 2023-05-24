@@ -44,7 +44,7 @@
                 Console.Clear();
 
                 // Check if the player has already guessed the letter
-                if (guess.Contains(playerGuess))
+                if (guessed.Contains(playerGuess))
                 {
                     Console.WriteLine("You already guessed this letter. Please enter a different letter.");
                     continue;
